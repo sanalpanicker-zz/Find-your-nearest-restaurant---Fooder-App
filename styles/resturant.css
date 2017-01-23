@@ -1,0 +1,475 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    -webkit-font-smoothing: antialiased;
+}
+
+.wrapper {
+    top: 0px;
+    width: 100%;
+}
+
+.logo {
+    height: 80px;
+    padding-bottom: 9px;
+    text-align: center;
+}
+
+.center {
+    text-align: center;
+}
+
+body {
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    background: #e74c3c;
+    color: white;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    font: 30px/1.375 "Lato", arial, sans-serif;
+    -ms-flex-flow: column nowrap;
+    flex-flow: column nowrap;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    width: 100%;
+    /*background-image: url("https://maps.googleapis.com/maps/api/staticmap?center=Brooklyn+Bridge,New+York,NY&zoom=13&size=600x300&maptype=roadmap&markers=color:blue%7Clabel:S%7C40.702147,-74.015794&markers=color:green%7Clabel:G%7C40.711614,-74.012318&markers=color:red%7Clabel:C%7C40.718217,-73.998284&sensor=false");
+    background-repeat: none;*/
+}
+
+.note {
+    font-size: 0.375em;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #6426a7;
+}
+
+.search_landing {
+    width: 40%;
+}
+
+#search {
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    background: #c0392b;
+    border-radius: 10px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    margin: 0.5em 0;
+    padding: 0.5em 0.5em 0.5em 1em;
+    -webkit-transition: all 0.5s;
+    transition: all 0.5s;
+    width: 500px;
+}
+
+#search input::-webkit-input-placeholder {
+    opacity: 0.1;
+}
+
+#search:hover,
+#search:focus {
+    background: #c0392b;
+}
+
+#search button,
+#search input {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background: transparent;
+    border: 0;
+    color: inherit;
+    font: inherit;
+    outline: 0;
+}
+
+#search button {
+    cursor: pointer;
+    padding: 0 0.25em;
+}
+
+#search input {
+    -webkit-box-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+}
+
+#search input::-webkit-input-placeholder {
+    color: #fff;
+}
+
+#search input::-moz-placeholder {
+    color: #fff;
+}
+
+#search input:-ms-input-placeholder {
+    color: #fff;
+}
+
+#search input::placeholder {
+    color: #fff;
+}
+
+.wrap {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.search_results {
+    width: 100%;
+    margin-top: 90px;
+}
+
+.button {
+    display: inline-block;
+    margin: 0.3em;
+    padding: 1.2em 5em;
+    overflow: hidden;
+    position: relative;
+    text-decoration: none;
+    text-transform: uppercase;
+    border-radius: 3px;
+    -webkit-transition: 0.3s;
+    -moz-transition: 0.3s;
+    -ms-transition: 0.3s;
+    -o-transition: 0.3s;
+    transition: 0.3s;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+    border: none;
+    font-size: 15px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.button:hover {
+    box-shadow: 1px 6px 15px rgba(0, 0, 0, 0.5);
+}
+
+.orange {
+    background-color: #f39c12;
+    color: white;
+}
+
+.card_holder {
+    top: 0px;
+}
+
+.card {
+    color: #666;
+    background: #fff;
+    border-radius: 2px;
+    /*display: inline-block;*/
+    height: auto;
+    margin: 1rem;
+    position: relative;
+    width: 40%;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+    transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
+}
+
+.card .name {
+    vertical-align: top;
+    font-size: 0.8em;
+    display: inline-block;
+    width: 40%;
+}
+
+.search_results a {
+    text-decoration: none;
+    color: #c0392b;
+    cursor: pointer;
+}
+
+.card .image {
+    display: inline-block;
+    width: 100px;
+}
+
+.card .address {
+    width: 29%;
+    font-size: 0.6em;
+    display: inline-block;
+    float: right;
+}
+
+.card .total {
+    display: inline-block;
+    margin-left: auto;
+    font-size: 0.6em;
+    margin-right: auto;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.card .review {
+    font-size: 0.6em;
+}
+
+.card .review_count,
+.card .rating {
+    font-size: 0.6em;
+    display: inline-block;
+}
+
+.card:hover {
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+}
+
+.content_space {
+    padding: 10px;
+}
+
+
+/*rating system*/
+
+.rating {
+    font-size: 10px;
+    margin: 10px 0;
+}
+
+.rating i {
+    display: inline-block;
+    width: 0;
+    height: 1.5em;
+    border-width: 0 0.75em;
+    border-style: solid;
+    border-color: #eee;
+    border-radius: .22em;
+    color: white;
+    background: #eee;
+    font-style: normal;
+    line-height: 1.6em;
+    text-indent: -0.5em;
+    text-shadow: 1px 0 1px #b3b3b3;
+}
+
+
+/**side panel **/
+
+.card.sidepanel {
+    margin-top:0px;
+    height: 55px;
+    right: 0px;
+    top: 0px;
+    width: 100%;
+    display: inline-block;
+    position: fixed;
+}
+
+.card.dropdown{
+    padding: 20px;
+    width: 250px;
+    top: 40px;
+    position: fixed;
+    display: none;
+}
+.card.dropdown.show{
+    display: block;
+}
+
+.card.sidepanel.map {
+    top: 269px;
+    background-image: url("https://maps.googleapis.com/maps/api/staticmap?center=Brooklyn+Bridge,New+York,NY&zoom=13&size=600x300&maptype=roadmap&markers=color:blue%7Clabel:S%7C40.702147,-74.015794&markers=color:green%7Clabel:G%7C40.711614,-74.012318&markers=color:red%7Clabel:C%7C40.718217,-73.998284&sensor=false");
+}
+
+.inblock{
+    display:inline-block;
+    padding-left: 15px;
+}
+.return, .filter {
+    float:left;
+}
+.username,.user,.setting{
+    font-size: 0.6em;
+    float:right;
+}
+.top_banner img{
+    width:30px;
+    height:30px;
+    cursor: pointer;
+}
+.htext{
+    color: #c0392b;
+    font-size: 0.6em;
+    position: absolute;
+    left: 46%;
+}
+/** Colors */
+
+[data-rating^='1'] .star-1 {
+    border-color: #cc8b1f;
+    background: #cc8b1f;
+}
+
+[data-rating^='1.5'] .star-2 {
+    border-left-color: #cc8b1f;
+}
+
+[data-rating^='2'] .star-1 {
+    border-color: #dcb228;
+    background: #dcb228;
+}
+
+[data-rating^='2'] .star-2 {
+    border-color: #dcb228;
+    background: #dcb228;
+}
+
+[data-rating^='2.5'] .star-3 {
+    border-left-color: #dcb228;
+}
+
+[data-rating^='3'] .star-1 {
+    border-color: #f0991e;
+    background: #f0991e;
+}
+
+[data-rating^='3'] .star-2 {
+    border-color: #f0991e;
+    background: #f0991e;
+}
+
+[data-rating^='3'] .star-3 {
+    border-color: #f0991e;
+    background: #f0991e;
+}
+
+[data-rating^='3.5'] .star-4 {
+    border-left-color: #f0991e;
+}
+
+[data-rating^='4'] .star-1 {
+    border-color: #f26a2c;
+    background: #f26a2c;
+}
+
+[data-rating^='4'] .star-2 {
+    border-color: #f26a2c;
+    background: #f26a2c;
+}
+
+[data-rating^='4'] .star-3 {
+    border-color: #f26a2c;
+    background: #f26a2c;
+}
+
+[data-rating^='4'] .star-4 {
+    border-color: #f26a2c;
+    background: #f26a2c;
+}
+
+[data-rating^='4.5'] .star-5 {
+    border-left-color: #f26a2c;
+}
+
+[data-rating="5"] i {
+    background: #dd050b;
+    border-color: #dd050b;
+}
+
+.search_landing,
+.search_results,
+#search,.error,
+.card {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.error{
+    text-align: center;
+    font-size: 0.8em;
+    margin-top: 15px;
+}
+
+.card .heading {
+    display: block;
+    text-align: center;
+    font-size: 0.8em;
+    color: #c0392b;
+}
+
+
+/**selectors **/
+
+.radioholder {
+    width: 100%;
+    background: #fff;
+    margin-bottom: 1em;
+    font-size: 0.6em;
+    height: 2.0em;
+    color: #666;
+    -o-transition: .1s ease-out;
+    -ms-transition: .1s ease-out;
+    -moz-transition: .1s ease-out;
+    -webkit-transition: .1s ease-out;
+    transition: .1s ease-out;
+    cursor: pointer;
+}
+
+.activeradioholder {
+    background: #e74c3c;
+    color: #fff;
+}
+
+.radioholder .desc {
+    display: inline-block;
+    vertical-align: middle;
+    padding-left: .6em;
+    line-height: 2.0em;
+}
+
+.radioholder .tick {
+    display: inline-block;
+    vertical-align: middle;
+    width: 2.0em;
+    height: 100%;
+    background-color: #eee;
+    background-image: none;
+    -o-transition: .1s ease-out;
+    -ms-transition: .1s ease-out;
+    -moz-transition: .1s ease-out;
+    -webkit-transition: .1s ease-out;
+    transition: .1s ease-out;
+}
+
+.activeradioholder .tick {
+    background-color: #c0392b;
+    background-image: url('../images/png/radio_tick.png');
+    background-size: cover;
+}
+
+.radioholder:hover {
+    background-color: #eee;
+}
+
+.radioholder:hover .tick {
+    background-color: #ddd;
+}
+
+.activeradioholder:hover {
+    background-color: #e74c3c;
+}
+
+.activeradioholder:hover .tick {
+    background-color: #c0392b;
+}
+
+
+/** Print */
+
+@media print {
+    .rating {
+        -webkit-print-color-adjust: exact;
+    }
+    .rating i {
+        text-shadow: none;
+    }
+}

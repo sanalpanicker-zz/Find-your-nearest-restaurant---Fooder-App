@@ -1,0 +1,19 @@
+{
+  "name": "viv_labs_demo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "bundle": "webpack",
+    "start": "webpack-dev-server"
+  },
+  "keywords": [],
+  "author": "sanal panicker",
+  "license": "ISC",
+  "devDependencies": {
+    "bower": "^1.8.0",
+    "bower-webpack-plugin": "^0.1.9",
+    "webpack": "^1.14.0",
+    "webpack-dev-server": "^1.16.2"
+  }
+}

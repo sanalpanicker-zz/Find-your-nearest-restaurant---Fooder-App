@@ -1,0 +1,23 @@
+{
+    "name": "viv_labs_demo",
+    "description": "",
+    "main": "app.js",
+    "authors": [
+        "sanal panicker"
+    ],
+    "license": "ISC",
+    "homepage": "",
+    "ignore": [
+        "**/.*",
+        "node_modules",
+        "bower_components",
+        "test",
+        "tests"
+    ],
+    "devDependencies": {
+        "angular": "^1.6.1",
+        "angular-bootstrap": "^2.4.0",
+        "jquery": "^3.1.1",
+        "angular-route": "^1.6.1"
+    }
+}

@@ -1,0 +1,69 @@
+<div class="search_landing" ng-if="search" id="search_page">
+    <div id="resturant_landing" class="center">
+        <image class="logo" src="images/svg/burger.svg"></image>
+    </div>
+    <div id="search">
+        <input id="input" class="rlocation" ng-model="location" value={{location}} placeholder="city, state, zip, address .." /><br>
+    </div>
+    <div id="search">
+        <input id="input" class="rfood" ng-model="food_type" value={{food_type}} placeholder="tacos, cheap dinner, Max's..." /><br>
+    </div>
+    <div class="wrap">
+        <span class="button orange" ng-click="findFood()">Find my food</span>
+    </div>
+    <div class="error">
+        <span ng-if="showNoBusiness">Sorry, we couldnt find a match for you</span>
+        <span ng-if="showError">Hmm, looks like you are a Robot</span>
+    </div>
+</div>
+<div ng-if="results" id="result_page" class="search_results">
+    <div class="card_holder">
+        <div class="card" ng-repeat="r in rData">
+            <div class="content_space">
+                <div class="image"><img src="{{r.image_url}}"></img>
+                </div>
+                <div class="name"><a target="_blank" href={{r.url}}><span >{{r.name}}</span></a><br>
+                    <div class="rating" data-rating={{r.rating}}>
+                        <i class="star-1">★</i>
+                        <i class="star-2">★</i>
+                        <i class="star-3">★</i>
+                        <i class="star-4">★</i>
+                        <i class="star-5">★</i>
+                    </div> <span class="review_count">{{r.review_count}} reviews</span>
+                </div>
+                <div class="address"><span>{{r.location.display_address[0]}}</span><br><span>{{r.location.display_address[1]}}</span><br><span>{{r.location.display_address[2]}}</span><br><span>{{r.location.display_phone}}</span>
+                    <a
+                        target="_blank" href="https://www.google.com/maps/place/{{r.name}}"><span>Get Direction</span></a>
+                </div>
+                <div class="review"><span>" {{r.snippet_text}}</span><a href={{r.url}}>read more</a></div>
+            </div>
+        </div>
+    </div>
+    <div class="card sidepanel">
+        <div class="content_space">
+            <div>
+                <div id="return" ng-click="goBack()" class="return inblock top_banner"><img src="../images/svg/back.svg"></img>
+                </div>
+                <div id="filter" ng-click="showfilter()" class="filter inblock top_banner"><img src="../images/svg/filter.svg"></img>
+                </div>
+                <div class="htext top_banner"><span>Total Match : {{rData.length}}</span></div>
+                <div id="username" class="username inblock top_banner">John Doe</div>
+                <div id="user" class="user inblock top_banner"><img src="../images/svg/user.svg"></img>
+                </div>
+                <div id="setting" class="setting inblock top_banner"><img src="../images/svg/setting.svg"></img>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="card dropdown">
+        <div id="ft_review" class="radioholder">
+            <span ng-click="filterSelector('ft_review',$event)" class="tick"></span>
+            <span class="desc">Most Reviewed</span></div>
+        <div id="ft_rate" class="radioholder">
+            <span ng-click="filterSelector('ft_rate',$event)" class="tick"></span>
+            <span class="desc">Most Rated</span></div>
+        <div id="ft_location" class="radioholder activeradioholder">
+            <span ng-click="filterSelector('ft_location',$event)" class="tick"></span>
+            <span class="desc">Most Nearest</span></div>
+    </div>
+</div>
